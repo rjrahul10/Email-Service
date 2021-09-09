@@ -1,4 +1,7 @@
 package com.rahul.emailservice.entity;
+
+import javax.validation.constraints.NotBlank;
+
 /**
  * 
  * @author Rahul Kumar
@@ -11,8 +14,11 @@ public class Mail {
 	 *  mailSubject- the subject of your mail
 	 *  mailBody - the body of your mail
 	 */
+	@NotBlank(message="Reciever Address is needed")
 	private String mailTo;
+	@NotBlank(message="Need Mail Subject")
 	private String mailSubject;
+	@NotBlank(message="Cannot have Empty Body")
 	private String mailBody;
 	
 	public String getMailTo() {
